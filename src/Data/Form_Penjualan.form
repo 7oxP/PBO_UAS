@@ -20,12 +20,12 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuMobilMouseClicked"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="menuPenyewa">
+        <Menu class="javax.swing.JMenu" name="menuPembeli">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Form Penyewa"/>
+            <Property name="text" type="java.lang.String" value="Form Pembeli"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuPenyewaMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuPembeliMouseClicked"/>
           </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuKaryawan">
@@ -38,7 +38,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuSewa">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Form Sewa"/>
+            <Property name="text" type="java.lang.String" value="Form Penjualan"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuSewaMouseClicked"/>
@@ -339,7 +339,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="     Jual"/>
+        <Property name="text" type="java.lang.String" value="Penjualan"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnBack">

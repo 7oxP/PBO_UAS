@@ -30,9 +30,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="menuSewa" max="32767" attributes="0"/>
+                  <Component id="menuPenjualan" max="32767" attributes="0"/>
                   <Component id="menuKaryawan" alignment="1" max="32767" attributes="0"/>
-                  <Component id="menuPenyewa" alignment="1" max="32767" attributes="0"/>
+                  <Component id="menuPembeli" alignment="1" max="32767" attributes="0"/>
                   <Component id="menuMobil" alignment="0" max="32767" attributes="0"/>
                   <Component id="menuTokoCabang" alignment="0" pref="131" max="32767" attributes="0"/>
               </Group>
@@ -55,11 +55,11 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="menuMobil" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="menuPenyewa" min="-2" max="-2" attributes="0"/>
+              <Component id="menuPembeli" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="menuKaryawan" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="menuSewa" min="-2" max="-2" attributes="0"/>
+              <Component id="menuPenjualan" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="67" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -90,20 +90,21 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuKaryawanMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="menuSewa">
+    <Component class="javax.swing.JButton" name="menuPenjualan">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sewa"/>
+        <Property name="text" type="java.lang.String" value="Penjualan"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuSewaMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuPenjualanMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuPenjualanActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="menuPenyewa">
+    <Component class="javax.swing.JButton" name="menuPembeli">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Penyewa"/>
+        <Property name="text" type="java.lang.String" value="Pembeli"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuPenyewaMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuPembeliMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="labelMenu">

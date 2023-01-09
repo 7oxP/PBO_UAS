@@ -20,12 +20,12 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuMobilMouseClicked"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="menuPenyewa">
+        <Menu class="javax.swing.JMenu" name="menuPembeli">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Form Penyewa"/>
+            <Property name="text" type="java.lang.String" value="Form Pembeli"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuPenyewaMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuPembeliMouseClicked"/>
           </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuKaryawan">
@@ -36,12 +36,12 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuKaryawanMouseClicked"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="menuSewa">
+        <Menu class="javax.swing.JMenu" name="menuPenjualan">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Form Sewa"/>
+            <Property name="text" type="java.lang.String" value="Form Penjualan"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuSewaMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuPenjualanMouseClicked"/>
           </Events>
         </Menu>
       </SubComponents>

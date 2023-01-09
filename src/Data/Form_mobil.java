@@ -89,9 +89,9 @@ public class Form_mobil extends javax.swing.JFrame {
         menuBar = new javax.swing.JMenuBar();
         menuTokoCabang = new javax.swing.JMenu();
         menuMobil = new javax.swing.JMenu();
-        menuPenyewa = new javax.swing.JMenu();
+        menuPembeli = new javax.swing.JMenu();
         menuKaryawan = new javax.swing.JMenu();
-        menuSewa = new javax.swing.JMenu();
+        menuPenjualan = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -168,13 +168,13 @@ public class Form_mobil extends javax.swing.JFrame {
         });
         menuBar.add(menuMobil);
 
-        menuPenyewa.setText("Form Penyewa");
-        menuPenyewa.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuPembeli.setText("Form Pembeli");
+        menuPembeli.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuPenyewaMouseClicked(evt);
+                menuPembeliMouseClicked(evt);
             }
         });
-        menuBar.add(menuPenyewa);
+        menuBar.add(menuPembeli);
 
         menuKaryawan.setText("Form Karyawan");
         menuKaryawan.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -184,13 +184,13 @@ public class Form_mobil extends javax.swing.JFrame {
         });
         menuBar.add(menuKaryawan);
 
-        menuSewa.setText("Form Sewa");
-        menuSewa.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuPenjualan.setText("Form Penjualan");
+        menuPenjualan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuSewaMouseClicked(evt);
+                menuPenjualanMouseClicked(evt);
             }
         });
-        menuBar.add(menuSewa);
+        menuBar.add(menuPenjualan);
 
         setJMenuBar(menuBar);
 
@@ -395,20 +395,20 @@ public class Form_mobil extends javax.swing.JFrame {
         
     }//GEN-LAST:event_menuMobilMouseClicked
 
-    private void menuPenyewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPenyewaMouseClicked
+    private void menuPembeliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPembeliMouseClicked
         // TODO add your handling code here:
         new Form_Pembeli().setVisible(true);
-    }//GEN-LAST:event_menuPenyewaMouseClicked
+    }//GEN-LAST:event_menuPembeliMouseClicked
 
     private void menuKaryawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuKaryawanMouseClicked
         // TODO add your handling code here:
         new Form_Karyawan().setVisible(true);
     }//GEN-LAST:event_menuKaryawanMouseClicked
 
-    private void menuSewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSewaMouseClicked
+    private void menuPenjualanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPenjualanMouseClicked
         // TODO add your handling code here:
         new Form_Penjualan().setVisible(true);
-    }//GEN-LAST:event_menuSewaMouseClicked
+    }//GEN-LAST:event_menuPenjualanMouseClicked
 
     /**
      * @param args the command line arguments***/
@@ -429,8 +429,8 @@ public class Form_mobil extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuKaryawan;
     private javax.swing.JMenu menuMobil;
-    private javax.swing.JMenu menuPenyewa;
-    private javax.swing.JMenu menuSewa;
+    private javax.swing.JMenu menuPembeli;
+    private javax.swing.JMenu menuPenjualan;
     private javax.swing.JMenu menuTokoCabang;
     private javax.swing.JTable tabelMobil;
     private javax.swing.JButton tambah;

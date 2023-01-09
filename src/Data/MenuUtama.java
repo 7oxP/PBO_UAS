@@ -29,8 +29,8 @@ public class MenuUtama extends javax.swing.JFrame {
         menuTokoCabang = new javax.swing.JButton();
         menuMobil = new javax.swing.JButton();
         menuKaryawan = new javax.swing.JButton();
-        menuSewa = new javax.swing.JButton();
-        menuPenyewa = new javax.swing.JButton();
+        menuPenjualan = new javax.swing.JButton();
+        menuPembeli = new javax.swing.JButton();
         labelMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,17 +62,22 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
 
-        menuSewa.setText("Sewa");
-        menuSewa.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuPenjualan.setText("Penjualan");
+        menuPenjualan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuSewaMouseClicked(evt);
+                menuPenjualanMouseClicked(evt);
+            }
+        });
+        menuPenjualan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPenjualanActionPerformed(evt);
             }
         });
 
-        menuPenyewa.setText("Penyewa");
-        menuPenyewa.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuPembeli.setText("Pembeli");
+        menuPembeli.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuPenyewaMouseClicked(evt);
+                menuPembeliMouseClicked(evt);
             }
         });
 
@@ -86,9 +91,9 @@ public class MenuUtama extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(143, 143, 143)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menuSewa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuPenjualan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuKaryawan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(menuPenyewa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuPembeli, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuMobil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuTokoCabang, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
                 .addGap(126, 126, 126))
@@ -107,11 +112,11 @@ public class MenuUtama extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(menuMobil)
                 .addGap(12, 12, 12)
-                .addComponent(menuPenyewa)
+                .addComponent(menuPembeli)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(menuKaryawan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(menuSewa)
+                .addComponent(menuPenjualan)
                 .addContainerGap(67, Short.MAX_VALUE))
         );
 
@@ -128,25 +133,29 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formMouseClicked
 
-    private void menuPenyewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPenyewaMouseClicked
+    private void menuPembeliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPembeliMouseClicked
         // TODO add your handling code here:
         new Form_Pembeli().setVisible(true);
-    }//GEN-LAST:event_menuPenyewaMouseClicked
+    }//GEN-LAST:event_menuPembeliMouseClicked
 
     private void menuKaryawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuKaryawanMouseClicked
         // TODO add your handling code here:
         new Form_Karyawan().setVisible(true);
     }//GEN-LAST:event_menuKaryawanMouseClicked
 
-    private void menuSewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSewaMouseClicked
+    private void menuPenjualanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPenjualanMouseClicked
         // TODO add your handling code here:
         new Form_Penjualan().setVisible(true);
-    }//GEN-LAST:event_menuSewaMouseClicked
+    }//GEN-LAST:event_menuPenjualanMouseClicked
 
     private void menuMobilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMobilMouseClicked
         // TODO add your handling code here:
         new Form_mobil().setVisible(true);
     }//GEN-LAST:event_menuMobilMouseClicked
+
+    private void menuPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPenjualanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuPenjualanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,8 +196,8 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JLabel labelMenu;
     private javax.swing.JButton menuKaryawan;
     private javax.swing.JButton menuMobil;
-    private javax.swing.JButton menuPenyewa;
-    private javax.swing.JButton menuSewa;
+    private javax.swing.JButton menuPembeli;
+    private javax.swing.JButton menuPenjualan;
     private javax.swing.JButton menuTokoCabang;
     // End of variables declaration//GEN-END:variables
 }
