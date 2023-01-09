@@ -57,7 +57,6 @@ public class Form_Karyawan extends javax.swing.JFrame {
         button_kembali = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
-        menuUtama = new javax.swing.JMenu();
         menuTokoCabang = new javax.swing.JMenu();
         menuMobil = new javax.swing.JMenu();
         menuPenyewa = new javax.swing.JMenu();
@@ -78,6 +77,11 @@ public class Form_Karyawan extends javax.swing.JFrame {
                 "ID Karyawan", "NIK", "Nama", "Nomor Handphone"
             }
         ));
+        tblKaryawan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblKaryawanMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblKaryawan);
 
         jLabel1.setText("NIK");
@@ -107,12 +111,6 @@ public class Form_Karyawan extends javax.swing.JFrame {
             }
         });
 
-        txtChosenID.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtChosenIDMouseClicked(evt);
-            }
-        });
-
         jLabel5.setText("ID Terpilih");
 
         button_kembali.setText("Kembali");
@@ -124,9 +122,6 @@ public class Form_Karyawan extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("Data Karyawan");
-
-        menuUtama.setText("Menu Utama");
-        menuBar.add(menuUtama);
 
         menuTokoCabang.setText("Form Toko Cabang");
         menuTokoCabang.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -274,7 +269,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
                     rs.getString("id_karyawan"),
                     rs.getString("nik"),
                     rs.getString("nama"),
-                    rs.getString("no_handphone"),};
+                    rs.getString("no_hp"),};
                 tabel.addRow(data);
                 tblKaryawan.setModel(tabel);
 
@@ -298,7 +293,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Data tidak boleh kosong!", "Error", JOptionPane.ERROR_MESSAGE);
 
             } else {
-                String queryInsert = "INSERT INTO karyawan(nik,nama,no_handphone) VALUES ('" + txtNIK.getText() + "','" + txtNama.getText() + "','" + txtNoHP.getText() + "')";
+                String queryInsert = "INSERT INTO karyawan(nik,nama,no_hp) VALUES ('" + txtNIK.getText() + "','" + txtNama.getText() + "','" + txtNoHP.getText() + "')";
                 try {
                     st.executeUpdate(queryInsert);
                     JOptionPane.showMessageDialog(null, "Data berhasil dimasukkan!");
@@ -318,7 +313,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
     private void button_ubahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_ubahActionPerformed
         try {
             st = koneksi.createStatement();
-            String queryUpdate = "UPDATE karyawan SET nik = '"+txtNIK.getText()+"', nama = '"+txtNama.getText()+"', no_handphone ='"+txtNoHP.getText()+"' WHERE id_karyawan='"+txtChosenID.getText()+"'";
+            String queryUpdate = "UPDATE karyawan SET nik = '"+txtNIK.getText()+"', nama = '"+txtNama.getText()+"', no_hp ='"+txtNoHP.getText()+"' WHERE id_karyawan='"+txtChosenID.getText()+"'";
             st.executeUpdate(queryUpdate);
             JOptionPane.showMessageDialog(null,"Data berhasil diupdate!");
             Bersih();
@@ -347,11 +342,6 @@ public class Form_Karyawan extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_button_hapusActionPerformed
 
-    private void txtChosenIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtChosenIDMouseClicked
-        // TODO add your handling code here:
-        txtChosenID.setText(tblKaryawan.getValueAt(tblKaryawan.getSelectedRow(), 0).toString());
-    }//GEN-LAST:event_txtChosenIDMouseClicked
-
     private void menuMobilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMobilMouseClicked
         // TODO add your handling code here:
         new Form_mobil().setVisible(true);
@@ -363,6 +353,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
 
     private void menuSewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSewaMouseClicked
         // TODO add your handling code here:
+        new Form_Penjualan().setVisible(true);
         
     }//GEN-LAST:event_menuSewaMouseClicked
 
@@ -379,6 +370,14 @@ public class Form_Karyawan extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_button_kembaliActionPerformed
+
+    private void tblKaryawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKaryawanMouseClicked
+        // TODO add your handling code here:
+        txtChosenID.setText(tblKaryawan.getValueAt(tblKaryawan.getSelectedRow(), 0).toString());
+        txtNIK.setText(tblKaryawan.getValueAt(tblKaryawan.getSelectedRow(), 1).toString());
+        txtNama.setText(tblKaryawan.getValueAt(tblKaryawan.getSelectedRow(), 2).toString());
+        txtNoHP.setText(tblKaryawan.getValueAt(tblKaryawan.getSelectedRow(), 3).toString());
+    }//GEN-LAST:event_tblKaryawanMouseClicked
 
     /**
      * @param args the command line arguments
@@ -432,7 +431,6 @@ public class Form_Karyawan extends javax.swing.JFrame {
     private javax.swing.JMenu menuPenyewa;
     private javax.swing.JMenu menuSewa;
     private javax.swing.JMenu menuTokoCabang;
-    private javax.swing.JMenu menuUtama;
     private javax.swing.JTable tblKaryawan;
     private javax.swing.JTextField txtChosenID;
     private javax.swing.JTextField txtNIK;

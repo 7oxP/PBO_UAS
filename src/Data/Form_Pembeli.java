@@ -58,7 +58,6 @@ public class Form_Pembeli extends javax.swing.JFrame {
         btnKembali = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
-        menuUtama = new javax.swing.JMenu();
         menuTokoCabang = new javax.swing.JMenu();
         menuMobil = new javax.swing.JMenu();
         menuPenyewa = new javax.swing.JMenu();
@@ -140,9 +139,6 @@ public class Form_Pembeli extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("DATA PEMBELI");
-
-        menuUtama.setText("Menu Utama");
-        menuBar.add(menuUtama);
 
         menuTokoCabang.setText("Form Toko Cabang");
         menuTokoCabang.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -400,7 +396,7 @@ public class Form_Pembeli extends javax.swing.JFrame {
 
     private void menuSewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSewaMouseClicked
         // TODO add your handling code here:
-
+        new Form_Penjualan().setVisible(true);
     }//GEN-LAST:event_menuSewaMouseClicked
 
     /**
@@ -460,6 +456,5 @@ public class Form_Pembeli extends javax.swing.JFrame {
     private javax.swing.JMenu menuPenyewa;
     private javax.swing.JMenu menuSewa;
     private javax.swing.JMenu menuTokoCabang;
-    private javax.swing.JMenu menuUtama;
     // End of variables declaration//GEN-END:variables
 }
