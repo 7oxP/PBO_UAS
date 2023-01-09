@@ -87,7 +87,6 @@ public class Form_mobil extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         TxtId_terpilih = new javax.swing.JTextField();
         menuBar = new javax.swing.JMenuBar();
-        menuUtama = new javax.swing.JMenu();
         menuTokoCabang = new javax.swing.JMenu();
         menuMobil = new javax.swing.JMenu();
         menuPenyewa = new javax.swing.JMenu();
@@ -152,9 +151,6 @@ public class Form_mobil extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-
-        menuUtama.setText("Menu Utama");
-        menuBar.add(menuUtama);
 
         menuTokoCabang.setText("Form Toko Cabang");
         menuTokoCabang.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -279,7 +275,7 @@ public class Form_mobil extends javax.swing.JFrame {
              // TODO add your handling code here:
         try{// TODO add your handling code here:
             String id_terpilih = TxtId_terpilih.getText();
-            String sql = "Delete from mobil where id = ?";
+            String sql = "Delete from mobil where id_mobil = ?";
 
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setString(1, id_terpilih);
@@ -302,18 +298,16 @@ public class Form_mobil extends javax.swing.JFrame {
     private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
         // TODO add your handling code here:
         try{
-            String id = TxtId_terpilih.getText();
             String nopol = TxtNopol.getText();
             String tipe = TxtTipe.getText();
             String harga = TxtHarga.getText();
             
-            String sql = "INSERT INTO mobil(id, nopol, tipe, harga) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO mobil( nopol, tipe, harga) VALUES (?,?,?)";
             
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, id);
-            statement.setString(2, nopol);
-            statement.setString(3, tipe);
-            statement.setString(4, harga);
+            statement.setString(1, nopol);
+            statement.setString(2, tipe);
+            statement.setString(3, harga);
             
             int rows = statement.executeUpdate();
             if (rows > 0) {
@@ -337,7 +331,7 @@ public class Form_mobil extends javax.swing.JFrame {
         TxtId_terpilih.setText(selectedID);
         
         try{
-           String sql = "select *from mobil where id = " + selectedID;
+           String sql = "select *from mobil where id_mobil = " + selectedID;
            java.sql.Statement statement = conn.createStatement();
            ResultSet result = statement.executeQuery(sql);
            while(result.next()){
@@ -363,7 +357,7 @@ public class Form_mobil extends javax.swing.JFrame {
             String harga = TxtHarga.getText();
             String id_terpilih = TxtId_terpilih.getText();
             
-            String sql = "update mobil set nopol = ?, tipe = ?, harga = ? where id = ?";
+            String sql = "update mobil set nopol = ?, tipe = ?, harga = ? where id_mobil = ?";
             
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setString(1, nopol);
@@ -413,7 +407,7 @@ public class Form_mobil extends javax.swing.JFrame {
 
     private void menuSewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSewaMouseClicked
         // TODO add your handling code here:
-
+        new Form_Penjualan().setVisible(true);
     }//GEN-LAST:event_menuSewaMouseClicked
 
     /**
@@ -438,7 +432,6 @@ public class Form_mobil extends javax.swing.JFrame {
     private javax.swing.JMenu menuPenyewa;
     private javax.swing.JMenu menuSewa;
     private javax.swing.JMenu menuTokoCabang;
-    private javax.swing.JMenu menuUtama;
     private javax.swing.JTable tabelMobil;
     private javax.swing.JButton tambah;
     private javax.swing.JButton ubah;
