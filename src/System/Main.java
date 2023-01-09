@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package System;
-import Data.Form_Karyawan;
+import Data.MenuUtama;
 
 /**
  *
@@ -23,7 +23,7 @@ public class Main implements Runnable{
 
     @Override
     public void run() {
-        Form_Karyawan frame = new Form_Karyawan();
+        MenuUtama frame = new MenuUtama();
         frame.setVisible(true);
     }
     

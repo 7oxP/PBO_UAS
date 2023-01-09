@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package pa;
+package Data;
 
-import tools.DBConnection;
+import Tools.DBConnection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
@@ -25,7 +25,7 @@ public class Form_mobil extends javax.swing.JFrame {
     public Form_mobil(){
         initComponents();
         DBConnection openconn = new DBConnection();
-        this.conn = openconn.create_connection();
+        this.conn = openconn.Koneksi();
 
         this.tblmodel = (DefaultTableModel)tabelMobil.getModel();
 
@@ -86,6 +86,13 @@ public class Form_mobil extends javax.swing.JFrame {
         tabelMobil = new javax.swing.JTable();
         back = new javax.swing.JButton();
         TxtId_terpilih = new javax.swing.JTextField();
+        menuBar = new javax.swing.JMenuBar();
+        menuUtama = new javax.swing.JMenu();
+        menuTokoCabang = new javax.swing.JMenu();
+        menuMobil = new javax.swing.JMenu();
+        menuPenyewa = new javax.swing.JMenu();
+        menuKaryawan = new javax.swing.JMenu();
+        menuSewa = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,6 +152,51 @@ public class Form_mobil extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
+
+        menuUtama.setText("Menu Utama");
+        menuBar.add(menuUtama);
+
+        menuTokoCabang.setText("Form Toko Cabang");
+        menuTokoCabang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuTokoCabangMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuTokoCabang);
+
+        menuMobil.setText("Form Mobil");
+        menuMobil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuMobilMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuMobil);
+
+        menuPenyewa.setText("Form Penyewa");
+        menuPenyewa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuPenyewaMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuPenyewa);
+
+        menuKaryawan.setText("Form Karyawan");
+        menuKaryawan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuKaryawanMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuKaryawan);
+
+        menuSewa.setText("Form Sewa");
+        menuSewa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuSewaMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuSewa);
+
+        setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,10 +268,11 @@ public class Form_mobil extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
@@ -339,6 +392,30 @@ public class Form_mobil extends javax.swing.JFrame {
         menu.setVisible(true);*/        
     }//GEN-LAST:event_backActionPerformed
 
+    private void menuTokoCabangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTokoCabangMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuTokoCabangMouseClicked
+
+    private void menuMobilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMobilMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_menuMobilMouseClicked
+
+    private void menuPenyewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPenyewaMouseClicked
+        // TODO add your handling code here:
+        new Form_Pembeli().setVisible(true);
+    }//GEN-LAST:event_menuPenyewaMouseClicked
+
+    private void menuKaryawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuKaryawanMouseClicked
+        // TODO add your handling code here:
+        new Form_Karyawan().setVisible(true);
+    }//GEN-LAST:event_menuKaryawanMouseClicked
+
+    private void menuSewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSewaMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_menuSewaMouseClicked
+
     /**
      * @param args the command line arguments***/
 
@@ -355,6 +432,13 @@ public class Form_mobil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuKaryawan;
+    private javax.swing.JMenu menuMobil;
+    private javax.swing.JMenu menuPenyewa;
+    private javax.swing.JMenu menuSewa;
+    private javax.swing.JMenu menuTokoCabang;
+    private javax.swing.JMenu menuUtama;
     private javax.swing.JTable tabelMobil;
     private javax.swing.JButton tambah;
     private javax.swing.JButton ubah;
