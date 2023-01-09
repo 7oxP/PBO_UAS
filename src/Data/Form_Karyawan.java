@@ -52,9 +52,17 @@ public class Form_Karyawan extends javax.swing.JFrame {
         button_tambah = new javax.swing.JButton();
         button_ubah = new javax.swing.JButton();
         button_hapus = new javax.swing.JButton();
-        button_kembali = new javax.swing.JButton();
         txtChosenID = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        button_kembali = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        menuBar = new javax.swing.JMenuBar();
+        menuUtama = new javax.swing.JMenu();
+        menuTokoCabang = new javax.swing.JMenu();
+        menuMobil = new javax.swing.JMenu();
+        menuPenyewa = new javax.swing.JMenu();
+        menuKaryawan = new javax.swing.JMenu();
+        menuSewa = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Form Karyawan");
@@ -99,8 +107,6 @@ public class Form_Karyawan extends javax.swing.JFrame {
             }
         });
 
-        button_kembali.setText("Kembali");
-
         txtChosenID.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtChosenIDMouseClicked(evt);
@@ -109,6 +115,61 @@ public class Form_Karyawan extends javax.swing.JFrame {
 
         jLabel5.setText("ID Terpilih");
 
+        button_kembali.setText("Kembali");
+        button_kembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_kembaliActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setText("Data Karyawan");
+
+        menuUtama.setText("Menu Utama");
+        menuBar.add(menuUtama);
+
+        menuTokoCabang.setText("Form Toko Cabang");
+        menuTokoCabang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuTokoCabangMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuTokoCabang);
+
+        menuMobil.setText("Form Mobil");
+        menuMobil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuMobilMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuMobil);
+
+        menuPenyewa.setText("Form Penyewa");
+        menuPenyewa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuPenyewaMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuPenyewa);
+
+        menuKaryawan.setText("Form Karyawan");
+        menuKaryawan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuKaryawanMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuKaryawan);
+
+        menuSewa.setText("Form Sewa");
+        menuSewa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuSewaMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuSewa);
+
+        setJMenuBar(menuBar);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,7 +177,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,6 +189,13 @@ public class Form_Karyawan extends javax.swing.JFrame {
                                     .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(button_tambah)
+                                        .addComponent(txtNoHP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel5)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,17 +204,11 @@ public class Form_Karyawan extends javax.swing.JFrame {
                                             .addComponent(button_ubah)
                                             .addGap(18, 18, 18)
                                             .addComponent(button_hapus)))
-                                    .addGap(0, 0, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(button_tambah)
-                                        .addComponent(txtNoHP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 0, Short.MAX_VALUE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGap(1, 1, 1))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(button_kembali)))
@@ -155,12 +217,11 @@ public class Form_Karyawan extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(txtNIK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -174,7 +235,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
                             .addComponent(txtNoHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(button_tambah)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtChosenID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
@@ -182,9 +243,9 @@ public class Form_Karyawan extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(button_ubah)
                             .addComponent(button_hapus))))
-                .addGap(18, 18, 18)
+                .addGap(46, 46, 46)
                 .addComponent(button_kembali)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -291,6 +352,34 @@ public class Form_Karyawan extends javax.swing.JFrame {
         txtChosenID.setText(tblKaryawan.getValueAt(tblKaryawan.getSelectedRow(), 0).toString());
     }//GEN-LAST:event_txtChosenIDMouseClicked
 
+    private void menuMobilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMobilMouseClicked
+        // TODO add your handling code here:
+        new Form_mobil().setVisible(true);
+    }//GEN-LAST:event_menuMobilMouseClicked
+
+    private void menuKaryawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuKaryawanMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuKaryawanMouseClicked
+
+    private void menuSewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSewaMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_menuSewaMouseClicked
+
+    private void menuTokoCabangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTokoCabangMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuTokoCabangMouseClicked
+
+    private void menuPenyewaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPenyewaMouseClicked
+        // TODO add your handling code here:
+        new Form_Pembeli().setVisible(true);
+    }//GEN-LAST:event_menuPenyewaMouseClicked
+
+    private void button_kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_kembaliActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_button_kembaliActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -302,7 +391,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -334,8 +423,16 @@ public class Form_Karyawan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuKaryawan;
+    private javax.swing.JMenu menuMobil;
+    private javax.swing.JMenu menuPenyewa;
+    private javax.swing.JMenu menuSewa;
+    private javax.swing.JMenu menuTokoCabang;
+    private javax.swing.JMenu menuUtama;
     private javax.swing.JTable tblKaryawan;
     private javax.swing.JTextField txtChosenID;
     private javax.swing.JTextField txtNIK;

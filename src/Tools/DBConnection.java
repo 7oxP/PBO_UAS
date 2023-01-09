@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 public class DBConnection {
 
     public static Connection Koneksi() {
-        String db = "jdbc:mysql://localhost:3306/pbo_uas";
+        String db = "jdbc:mysql://localhost:3306/uas_pbo";
         String user = "root";
         String password = "";
         try {
