@@ -65,7 +65,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
         menuPenjualan = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Form Karyawan");
+        setTitle("Aplikasi Jual Mobil");
 
         tblKaryawan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -66,6 +66,7 @@ public class Form_Pembeli extends javax.swing.JFrame {
         menuPenjualan = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Aplikasi Jual Mobil");
 
         TblPembeli.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

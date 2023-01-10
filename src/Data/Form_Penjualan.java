@@ -75,6 +75,7 @@ public class Form_Penjualan extends javax.swing.JFrame {
         menuSewa = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Aplikasi Jual Mobil");
 
         TableJual.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -289,7 +290,7 @@ public class Form_Penjualan extends javax.swing.JFrame {
         try {
             String id_cabang = cboxCabang1.getSelectedItem().toString();
             String id_mobil = cboxMobil.getSelectedItem().toString();
-            String id_pembeli = cboxPembeli.getSelectedItem().toString();
+            String id_pembeli = cboxPembeli.getSelectedItem().toString().split(" | ")[0];
             String id_karyawan = cboxKaryawan.getSelectedItem().toString();
             String tanggal = TxtTanggalWaktu.getText();
 
@@ -465,13 +466,13 @@ public class Form_Penjualan extends javax.swing.JFrame {
 
         try {
 
-            String sql = "select id_pembeli from pembeli";
+            String sql = "select id_pembeli, nama from pembeli";
             Statement statement = this.conn.createStatement();
             ResultSet result = statement.executeQuery(sql);
             cboxPembeli.removeAllItems();
             cboxPembeli.addItem(null);
             while (result.next()) {
-                String id = result.getString(1);
+                String id = result.getString(1) + " | " + result.getString(2);
                 cboxPembeli.addItem(id);
             }
 

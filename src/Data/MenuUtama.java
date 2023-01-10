@@ -34,7 +34,7 @@ public class MenuUtama extends javax.swing.JFrame {
         labelMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Aplikasi Sewa Kendaraan");
+        setTitle("Aplikasi Jual Mobil");
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);

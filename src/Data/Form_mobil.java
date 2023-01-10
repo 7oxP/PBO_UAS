@@ -95,6 +95,7 @@ public class Form_mobil extends javax.swing.JFrame {
         menuPenjualan = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Aplikasi Jual Mobil");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Form Mobil");
