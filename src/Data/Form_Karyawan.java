@@ -57,7 +57,8 @@ public class Form_Karyawan extends javax.swing.JFrame {
         button_kembali = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
-        menuTokoCabang = new javax.swing.JMenu();
+        menuHome = new javax.swing.JMenu();
+        menuCabang = new javax.swing.JMenu();
         menuMobil = new javax.swing.JMenu();
         menuPembeli = new javax.swing.JMenu();
         menuKaryawan = new javax.swing.JMenu();
@@ -123,13 +124,21 @@ public class Form_Karyawan extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("Data Karyawan");
 
-        menuTokoCabang.setText("Form Toko Cabang");
-        menuTokoCabang.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuHome.setText("Home");
+        menuHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuTokoCabangMouseClicked(evt);
+                menuHomeMouseClicked(evt);
             }
         });
-        menuBar.add(menuTokoCabang);
+        menuBar.add(menuHome);
+
+        menuCabang.setText("Form Toko Cabang");
+        menuCabang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuCabangMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuCabang);
 
         menuMobil.setText("Form Mobil");
         menuMobil.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -171,43 +180,42 @@ public class Form_Karyawan extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
-                                .addGap(62, 62, 62)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNIK)
-                                    .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(button_tambah)
-                                        .addComponent(txtNoHP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 0, Short.MAX_VALUE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtChosenID, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(button_ubah)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(button_hapus)))
-                                    .addGap(1, 1, 1))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(button_kembali)))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNIK)
+                            .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(button_tambah)
+                                .addComponent(txtNoHP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtChosenID, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(button_ubah)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(button_hapus)))
+                            .addGap(1, 1, 1))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_kembali)
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,9 +246,9 @@ public class Form_Karyawan extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(button_ubah)
                             .addComponent(button_hapus))))
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(button_kembali)
-                .addContainerGap())
+                .addGap(40, 40, 40))
         );
 
         pack();
@@ -344,6 +352,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
 
     private void menuMobilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMobilMouseClicked
         // TODO add your handling code here:
+        dispose();
         new Form_mobil().setVisible(true);
     }//GEN-LAST:event_menuMobilMouseClicked
 
@@ -353,16 +362,14 @@ public class Form_Karyawan extends javax.swing.JFrame {
 
     private void menuPenjualanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPenjualanMouseClicked
         // TODO add your handling code here:
+        dispose();
         new Form_Penjualan().setVisible(true);
         
     }//GEN-LAST:event_menuPenjualanMouseClicked
 
-    private void menuTokoCabangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTokoCabangMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuTokoCabangMouseClicked
-
     private void menuPembeliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPembeliMouseClicked
         // TODO add your handling code here:
+        dispose();
         new Form_Pembeli().setVisible(true);
     }//GEN-LAST:event_menuPembeliMouseClicked
 
@@ -379,40 +386,53 @@ public class Form_Karyawan extends javax.swing.JFrame {
         txtNoHP.setText(tblKaryawan.getValueAt(tblKaryawan.getSelectedRow(), 3).toString());
     }//GEN-LAST:event_tblKaryawanMouseClicked
 
+    private void menuHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuHomeMouseClicked
+        // TODO add your handling code here:
+        dispose();
+//        MenuUtama menu = new MenuUtama();
+//        menu.setVisible(true);
+    }//GEN-LAST:event_menuHomeMouseClicked
+
+    private void menuCabangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCabangMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new Form_tokocabang().setVisible(true);
+    }//GEN-LAST:event_menuCabangMouseClicked
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Form_Karyawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Form_Karyawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Form_Karyawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Form_Karyawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Form_Karyawan().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Windows".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(Form_Karyawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(Form_Karyawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(Form_Karyawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(Form_Karyawan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Form_Karyawan().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton button_hapus;
@@ -426,11 +446,12 @@ public class Form_Karyawan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuCabang;
+    private javax.swing.JMenu menuHome;
     private javax.swing.JMenu menuKaryawan;
     private javax.swing.JMenu menuMobil;
     private javax.swing.JMenu menuPembeli;
     private javax.swing.JMenu menuPenjualan;
-    private javax.swing.JMenu menuTokoCabang;
     private javax.swing.JTable tblKaryawan;
     private javax.swing.JTextField txtChosenID;
     private javax.swing.JTextField txtNIK;

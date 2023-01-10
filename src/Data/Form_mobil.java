@@ -87,6 +87,7 @@ public class Form_mobil extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         TxtId_terpilih = new javax.swing.JTextField();
         menuBar = new javax.swing.JMenuBar();
+        menuHome = new javax.swing.JMenu();
         menuTokoCabang = new javax.swing.JMenu();
         menuMobil = new javax.swing.JMenu();
         menuPembeli = new javax.swing.JMenu();
@@ -151,6 +152,14 @@ public class Form_mobil extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
+
+        menuHome.setText("Home");
+        menuHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuHomeMouseClicked(evt);
+            }
+        });
+        menuBar.add(menuHome);
 
         menuTokoCabang.setText("Form Toko Cabang");
         menuTokoCabang.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -388,6 +397,8 @@ public class Form_mobil extends javax.swing.JFrame {
 
     private void menuTokoCabangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTokoCabangMouseClicked
         // TODO add your handling code here:
+        dispose();
+        new Form_tokocabang().setVisible(true);
     }//GEN-LAST:event_menuTokoCabangMouseClicked
 
     private void menuMobilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMobilMouseClicked
@@ -397,18 +408,26 @@ public class Form_mobil extends javax.swing.JFrame {
 
     private void menuPembeliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPembeliMouseClicked
         // TODO add your handling code here:
+        dispose();
         new Form_Pembeli().setVisible(true);
     }//GEN-LAST:event_menuPembeliMouseClicked
 
     private void menuKaryawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuKaryawanMouseClicked
         // TODO add your handling code here:
+        dispose();
         new Form_Karyawan().setVisible(true);
     }//GEN-LAST:event_menuKaryawanMouseClicked
 
     private void menuPenjualanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPenjualanMouseClicked
         // TODO add your handling code here:
+        dispose();
         new Form_Penjualan().setVisible(true);
     }//GEN-LAST:event_menuPenjualanMouseClicked
+
+    private void menuHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuHomeMouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_menuHomeMouseClicked
 
     /**
      * @param args the command line arguments***/
@@ -427,6 +446,7 @@ public class Form_mobil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuHome;
     private javax.swing.JMenu menuKaryawan;
     private javax.swing.JMenu menuMobil;
     private javax.swing.JMenu menuPembeli;

@@ -47,6 +47,11 @@ public class MenuUtama extends javax.swing.JFrame {
                 menuTokoCabangMouseClicked(evt);
             }
         });
+        menuTokoCabang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuTokoCabangActionPerformed(evt);
+            }
+        });
 
         menuMobil.setText("Mobil");
         menuMobil.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -126,7 +131,7 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void menuTokoCabangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTokoCabangMouseClicked
         // TODO add your handling code here:
-        
+        new Form_tokocabang().setVisible(true);        
     }//GEN-LAST:event_menuTokoCabangMouseClicked
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
@@ -156,6 +161,10 @@ public class MenuUtama extends javax.swing.JFrame {
     private void menuPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPenjualanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menuPenjualanActionPerformed
+
+    private void menuTokoCabangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuTokoCabangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuTokoCabangActionPerformed
 
     /**
      * @param args the command line arguments
