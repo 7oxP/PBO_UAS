@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package data1;
-import data.MenuAdmin;
-import tools.DBconnection;
+package Data;
+import Data.MenuUtama;
+import Tools.DBConnection;
 import javax.swing.table.DefaultTableModel;
 import java.sql.Statement;
 import java.sql.Connection;
@@ -29,8 +29,8 @@ public class Form_Penjualan1 extends javax.swing.JFrame {
     
     public Form_Penjualan1() {
         initComponents();
-        DBconnection openconn = new DBconnection();
-        this.conn = openconn.create_connection();
+        DBConnection openconn = new DBConnection();
+        this.conn = openconn.Koneksi();
         
         this.tblmodel = (DefaultTableModel)TableJual.getModel();
 
@@ -324,7 +324,7 @@ public class Form_Penjualan1 extends javax.swing.JFrame {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         dispose();
-        MenuAdmin menu = new MenuAdmin();
+        MenuUtama menu = new MenuUtama();
         menu.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
 
