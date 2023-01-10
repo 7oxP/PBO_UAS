@@ -67,10 +67,10 @@ public class Form_tokocabang extends javax.swing.JFrame {
             
             while (result.next()){
                 String id_cabang = result.getString(1);
-                String nama_cabang = result.getString(2);
+                String nama = result.getString(2);
                 String alamat = result.getString(3);
                 
-                String dataMenu[] = {id_cabang, nama_cabang, alamat};
+                String dataMenu[] = {id_cabang, nama, alamat};
                 this.tblmodel.addRow(dataMenu);
             }
         }
@@ -246,8 +246,7 @@ public class Form_tokocabang extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -283,10 +282,6 @@ public class Form_tokocabang extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtIDActionPerformed
-
     private void BtnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKembaliActionPerformed
         // TODO add your handling code here:
          dispose();
@@ -297,13 +292,13 @@ public class Form_tokocabang extends javax.swing.JFrame {
     private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
         // TODO add your handling code here:
         try{
-            String nama_cabang = TxtCabang.getText();
+            String nama = TxtCabang.getText();
             String alamat = TxtAlamat.getText();
             
-            String sql = "INSERT INTO cabang(nama_cabang, alamat) VALUES (?,?)";
+            String sql = "INSERT INTO cabang(nama, alamat) VALUES (?,?)";
             
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, nama_cabang);
+            statement.setString(1, nama);
             statement.setString(2, alamat);
             
             int rows = statement.executeUpdate();
@@ -322,16 +317,16 @@ public class Form_tokocabang extends javax.swing.JFrame {
     private void BtnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnUbahActionPerformed
         // TODO add your handling code here:
         try {
-            String nama_cabang = TxtCabang.getText();
+            String nama = TxtCabang.getText();
             String alamat = TxtAlamat.getText();
             
 
             String id_terpilih = TxtID.getText();
             
-            String sql = "UPDATE cabang SET nama_cabang = ?, alamat = ? WHERE id_cabang = ?";
+            String sql = "UPDATE cabang SET nama = ?, alamat = ? WHERE id_cabang = ?";
             
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, nama_cabang);
+            statement.setString(1, nama);
             statement.setString(2, alamat);
             
             statement.setString(3, id_terpilih);
@@ -410,6 +405,10 @@ public class Form_tokocabang extends javax.swing.JFrame {
         dispose();
         new Form_Penjualan().setVisible(true);
     }//GEN-LAST:event_menuPenjualMouseClicked
+
+    private void TxtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtIDActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
