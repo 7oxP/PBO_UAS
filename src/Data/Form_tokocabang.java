@@ -112,6 +112,7 @@ public class Form_tokocabang extends javax.swing.JFrame {
 
         jLabel2.setText("ID Cabang");
 
+        TxtID.setEditable(false);
         TxtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtIDActionPerformed(evt);

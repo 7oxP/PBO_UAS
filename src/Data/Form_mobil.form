@@ -288,6 +288,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="TxtId_terpilih">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
