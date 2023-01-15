@@ -57,6 +57,7 @@ public class Form_Pembeli extends javax.swing.JFrame {
         btnHapus = new javax.swing.JButton();
         btnKembali = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        btnReset = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         menuHome = new javax.swing.JMenu();
         menuTokoCabang = new javax.swing.JMenu();
@@ -89,6 +90,11 @@ public class Form_Pembeli extends javax.swing.JFrame {
             }
         });
         TblPembeli.getTableHeader().setReorderingAllowed(false);
+        TblPembeli.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TblPembeliMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TblPembeli);
         if (TblPembeli.getColumnModel().getColumnCount() > 0) {
             TblPembeli.getColumnModel().getColumn(0).setResizable(false);
@@ -105,6 +111,7 @@ public class Form_Pembeli extends javax.swing.JFrame {
 
         jLabel4.setText("ID Terpilih");
 
+        TxtIDpembeli.setEditable(false);
         TxtIDpembeli.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TxtIDpembeliMouseClicked(evt);
@@ -141,6 +148,13 @@ public class Form_Pembeli extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setText("DATA PEMBELI");
+
+        btnReset.setText("Reset");
+        btnReset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnResetMouseClicked(evt);
+            }
+        });
 
         menuHome.setText("Home");
         menuHome.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -218,13 +232,16 @@ public class Form_Pembeli extends javax.swing.JFrame {
                                     .addComponent(InNomor)
                                     .addComponent(TxtIDpembeli)
                                     .addComponent(btnKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnTambah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 82, Short.MAX_VALUE)
                                 .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(324, 324, 324)
@@ -252,7 +269,9 @@ public class Form_Pembeli extends javax.swing.JFrame {
                             .addComponent(InNomor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnTambah)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnTambah)
+                            .addComponent(btnReset))
                         .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TxtIDpembeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -261,7 +280,7 @@ public class Form_Pembeli extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnEdit)
                             .addComponent(btnHapus))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnKembali)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -375,10 +394,7 @@ public class Form_Pembeli extends javax.swing.JFrame {
 
     private void TxtIDpembeliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtIDpembeliMouseClicked
         // TODO add your handling code here:
-        TxtIDpembeli.setText(TblPembeli.getValueAt(TblPembeli.getSelectedRow(), 0).toString());
-        InNik.setText(TblPembeli.getValueAt(TblPembeli.getSelectedRow(), 1).toString());
-        InNama.setText(TblPembeli.getValueAt(TblPembeli.getSelectedRow(), 2).toString());
-        InNomor.setText(TblPembeli.getValueAt(TblPembeli.getSelectedRow(), 3).toString());
+        
         
     }//GEN-LAST:event_TxtIDpembeliMouseClicked
 
@@ -417,6 +433,19 @@ public class Form_Pembeli extends javax.swing.JFrame {
 //        MenuUtama menu = new MenuUtama();
 //        menu.setVisible(true);
     }//GEN-LAST:event_menuHomeMouseClicked
+
+    private void TblPembeliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblPembeliMouseClicked
+        // TODO add your handling code here:
+        TxtIDpembeli.setText(TblPembeli.getValueAt(TblPembeli.getSelectedRow(), 0).toString());
+        InNik.setText(TblPembeli.getValueAt(TblPembeli.getSelectedRow(), 1).toString());
+        InNama.setText(TblPembeli.getValueAt(TblPembeli.getSelectedRow(), 2).toString());
+        InNomor.setText(TblPembeli.getValueAt(TblPembeli.getSelectedRow(), 3).toString());
+    }//GEN-LAST:event_TblPembeliMouseClicked
+
+    private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
+        // TODO add your handling code here:
+        Bersih();
+    }//GEN-LAST:event_btnResetMouseClicked
 
     /**
      * @param args the command line arguments
@@ -462,6 +491,7 @@ public class Form_Pembeli extends javax.swing.JFrame {
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnKembali;
+    private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTambah;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

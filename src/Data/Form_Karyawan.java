@@ -56,6 +56,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         button_kembali = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        btnReset = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         menuHome = new javax.swing.JMenu();
         menuCabang = new javax.swing.JMenu();
@@ -112,6 +113,8 @@ public class Form_Karyawan extends javax.swing.JFrame {
             }
         });
 
+        txtChosenID.setEditable(false);
+
         jLabel5.setText("ID Terpilih");
 
         button_kembali.setText("Kembali");
@@ -123,6 +126,13 @@ public class Form_Karyawan extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("Data Karyawan");
+
+        btnReset.setText("Reset");
+        btnReset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnResetMouseClicked(evt);
+            }
+        });
 
         menuHome.setText("Home");
         menuHome.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -192,20 +202,23 @@ public class Form_Karyawan extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(button_tambah)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(button_tambah)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addComponent(txtNoHP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel5)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtChosenID, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(button_ubah)
                                     .addGap(18, 18, 18)
-                                    .addComponent(button_hapus)))
+                                    .addComponent(button_hapus))
+                                .addComponent(txtChosenID))
                             .addGap(1, 1, 1))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,7 +250,9 @@ public class Form_Karyawan extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(txtNoHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(button_tambah)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(button_tambah)
+                            .addComponent(btnReset))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtChosenID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -399,6 +414,11 @@ public class Form_Karyawan extends javax.swing.JFrame {
         new Form_tokocabang().setVisible(true);
     }//GEN-LAST:event_menuCabangMouseClicked
 
+    private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
+        // TODO add your handling code here:
+        Bersih();
+    }//GEN-LAST:event_btnResetMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -435,6 +455,7 @@ public class Form_Karyawan extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReset;
     private javax.swing.JButton button_hapus;
     private javax.swing.JButton button_kembali;
     private javax.swing.JButton button_tambah;

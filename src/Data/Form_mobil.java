@@ -154,6 +154,8 @@ public class Form_mobil extends javax.swing.JFrame {
             }
         });
 
+        TxtId_terpilih.setEditable(false);
+
         menuHome.setText("Home");
         menuHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

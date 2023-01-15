@@ -113,6 +113,8 @@ public class Form_Penjualan extends javax.swing.JFrame {
 
         jLabel6.setText("ID Terpilih");
 
+        TxtID.setEditable(false);
+
         btnEdit.setText("Edit");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
