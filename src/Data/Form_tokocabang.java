@@ -411,6 +411,13 @@ public class Form_tokocabang extends javax.swing.JFrame {
     private void TxtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtIDActionPerformed
+    
+     private void TblMenuMouseClicked(java.awt.event.MouseEvent evt) {                                     
+        // TODO add your handling code here:
+        TxtID.setText(TblMenu.getValueAt(TblMenu.getSelectedRow(), 0).toString());
+        TxtCabang.setText(TblMenu.getValueAt(TblMenu.getSelectedRow(), 1).toString());
+        TxtAlamat.setText(TblMenu.getValueAt(TblMenu.getSelectedRow(), 2).toString());
+    }  
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
